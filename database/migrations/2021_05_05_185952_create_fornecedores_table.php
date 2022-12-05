@@ -23,7 +23,7 @@ class CreateFornecedoresTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
+     * ORM ( Object Relational Mappim)
      * @return void
      */
     public function down()

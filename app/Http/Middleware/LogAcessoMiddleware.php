@@ -31,3 +31,8 @@ class LogAcessoMiddleware
 
     }
 }
+
+/*
+    CRIANDO UMA MIDDLEWARE:
+    php artisan make:middleware LogAcessoMiddleware
+*/
