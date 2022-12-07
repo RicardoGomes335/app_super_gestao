@@ -282,4 +282,6 @@ Fornecedor 200⏎
       },
     ],
   }
+
+  ======== Eloquent - Selecionando registros com where() =============
 */

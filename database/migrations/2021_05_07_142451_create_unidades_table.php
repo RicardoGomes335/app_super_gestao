@@ -59,3 +59,12 @@ class CreateUnidadesTable extends Migration
         Schema::dropIfExists('unidades');
     }
 }
+/*
+    Migration - Adicionando chaves estrangeiras (Relacionamento um para muitos)
+
+    ph artisan make:migration create_unidades_table ( ENTER )
+
+    Depois criar os relacionamentos na migration criada.
+
+    php artisan migrate ( ENTER )
+*/
