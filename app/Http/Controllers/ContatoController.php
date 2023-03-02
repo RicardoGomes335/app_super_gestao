@@ -8,14 +8,21 @@ use App\MotivoContato;
 
 class ContatoController extends Controller
 {
-    public function contato(Request $request) {
+    public function contato(Request $request)
+    {
 
         $motivo_contatos = MotivoContato::all();
-
+        /*
+        echo '<pre>';
+        dd($request->all());
+        echo '</pre>';
+        echo $request->input('nome');
+        */
         return view('site.contato', ['titulo' => 'Contato (teste)', 'motivo_contatos' => $motivo_contatos]);
     }
 
-    public function salvar(Request $request) {
+    public function salvar(Request $request)
+    {
         $regras =             [
             'nome' => 'required|min:3|max:40|unique:site_contatos',
             'telefone' => 'required',
