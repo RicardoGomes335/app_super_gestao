@@ -8,7 +8,7 @@ class CreateLogAcessosTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * Criando o model e a migration = "php artisan make:model LogAcesso -m"
      * @return void
      */
     public function up()
