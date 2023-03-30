@@ -29,10 +29,16 @@ Route::get('/login/{erro?}', 'LoginController@index')->name('site.login');
 Route::post('/login', 'LoginController@autenticar')->name('site.login');
 
 Route::middleware('autenticacao:padrao,visitante,p3,p4')->prefix('/app')->group(function () {
+    // php artisan make:controller HomeController
     Route::get('/home', 'HomeController@index')->name('app.home');
     Route::get('/sair', 'LoginController@sair')->name('app.sair');
+    // php artisan make:controller ClienteController
     Route::get('/cliente', 'ClienteController@index')->name('app.cliente');
+    // php artisan make:controller FornecedorController
     Route::get('/fornecedor', 'FornecedorController@index')->name('app.fornecedor');
+    Route::post('/fornecedor/listar', 'FornecedorController@listar')->name('app.fornecedor.listar');
+    Route::get('/fornecedor/adicionar', 'FornecedorController@adicionar')->name('app.fornecedor.adicionar');
+    // php artisan make:controller ProdutoController
     Route::get('/produto', 'ProdutoController@index')->name('app.produto');
 });
 
