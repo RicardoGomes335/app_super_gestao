@@ -13,7 +13,7 @@
                 <li><a href="{{ route('app.fornecedor') }}">Consulta</a></li>
             </ul>
         </div>
-        <div class="informaacao-pagina">
+        <div class="informacao-pagina">
             <div style="width: 30%; margin-left: auto; margin-right: auto;">
                 <form method="POST" action="{{ route('app.fornecedor.listar') }}">
                     @csrf
