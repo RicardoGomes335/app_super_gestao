@@ -25,9 +25,11 @@ Route::get('/contato', 'ContatoController@contato')->name('site.contato');
 
 Route::post('/contato', 'ContatoController@salvar')->name('site.contato');
 
+// php artisan make:controller LoginController
 Route::get('/login/{erro?}', 'LoginController@index')->name('site.login');
 Route::post('/login', 'LoginController@autenticar')->name('site.login');
 
+// Rotas do middleware
 Route::middleware('autenticacao:padrao,visitante,p3,p4')->prefix('/app')->group(function () {
     // php artisan make:controller HomeController
     Route::get('/home', 'HomeController@index')->name('app.home');

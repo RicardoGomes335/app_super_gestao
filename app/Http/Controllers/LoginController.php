@@ -49,7 +49,7 @@ class LoginController extends Controller
 
         //print_r($request->all());
 
-        //iniciar o Model User
+        //iniciar o Model User e consulta o usuario no banco de dados
         $user = new User();
 
         $usuario = $user->where('email', $email)
