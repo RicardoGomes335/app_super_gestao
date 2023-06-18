@@ -47,8 +47,11 @@ Route::middleware('autenticacao:padrao,visitante,p3,p4')->prefix('/app')->group(
     // Excluir
     Route::get('/fornecedor/excluir/{id}', 'FornecedorController@excluir')->name('app.fornecedor.excluir');
 
-    // php artisan make:controller ProdutoController ->implementado com resource
+    // (Produto) php artisan make:controller --resource ProdutoController ->implementado com resource
     Route::resource('produto', 'ProdutoController');
+
+    // (ProdutoDetalhe) php artisan make:controller --resource ProdutoDetalheController
+    Route::resource('produto-detalhe', 'ProdutoDetalheController');
 });
 
 Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('site.teste');
