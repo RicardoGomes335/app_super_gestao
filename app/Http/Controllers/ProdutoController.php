@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Produto;
+use App\Item;
 use App\ProdutoDetalhe;
 use App\Unidade;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class ProdutoController extends Controller
     public function index(Request $request)
     {
         //dd($produtos);
-        $produtos = Produto::paginate(10);
+        $produtos = Item::with(['ItemDetalhe'])->paginate(10);
         /*
         foreach ($produtos as $key => $produto) {
             //print_r($produto->getAttributes());

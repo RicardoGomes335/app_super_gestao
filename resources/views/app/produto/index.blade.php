@@ -37,9 +37,9 @@
                             <td>{{ $produto->descricao }}</td>
                             <td>{{ $produto->peso }}</td>
                             <td>{{ $produto->unidade_id }}</td>
-                            <td>{{ $produto->ProdutoDetalhe->comprimento ?? '' }}</td>
-                            <td>{{ $produto->ProdutoDetalhe->altura ?? '' }}</td>
-                            <td>{{ $produto->ProdutoDetalhe->largura ?? '' }}</td>
+                            <td>{{ $produto->ItemDetalhe->comprimento ?? '' }}</td>
+                            <td>{{ $produto->ItemDetalhe->altura ?? '' }}</td>
+                            <td>{{ $produto->ItemDetalhe->largura ?? '' }}</td>
                             <td><a href="{{ route('produto.show', ['produto' => $produto->id ]) }}">Visualizar</a></td>
                             <td>
                                 <form id="form_{{ $produto->id }}" method="POST" action="{{ route('produto.destroy', ['produto' => $produto->id]) }}">
@@ -54,6 +54,7 @@
                         @endforeach
                     </tbody>
                 </table>
+
                 {{ $produtos->appends($request)->links() }}
                 <!--
                 <br>
