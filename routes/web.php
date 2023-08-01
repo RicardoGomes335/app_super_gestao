@@ -34,8 +34,7 @@ Route::middleware('autenticacao:padrao,visitante,p3,p4')->prefix('/app')->group(
     // php artisan make:controller HomeController
     Route::get('/home', 'HomeController@index')->name('app.home');
     Route::get('/sair', 'LoginController@sair')->name('app.sair');
-    // php artisan make:controller ClienteController
-    Route::get('/cliente', 'ClienteController@index')->name('app.cliente');
+
     // php artisan make:controller FornecedorController
     Route::get('/fornecedor', 'FornecedorController@index')->name('app.fornecedor');
     Route::post('/fornecedor/listar', 'FornecedorController@listar')->name('app.fornecedor.listar');
@@ -52,7 +51,18 @@ Route::middleware('autenticacao:padrao,visitante,p3,p4')->prefix('/app')->group(
 
     // (ProdutoDetalhe) php artisan make:controller --resource ProdutoDetalheController
     Route::resource('produto-detalhe', 'ProdutoDetalheController');
+
+    // php artisan make:controller --resource ClienteController
+    Route::resource('cliente', 'ClienteController');
+
+    // php artisan make:controller --resource PedidoController
+    Route::resource('pedido', 'PedidoController');
+
+    // php artisan make:controller --resource PedidoProdutoController
+    route::resource('pedido-produto', 'PedidoProdutoController');
 });
+
+//
 
 Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('site.teste');
 
