@@ -59,7 +59,10 @@ Route::middleware('autenticacao:padrao,visitante,p3,p4')->prefix('/app')->group(
     Route::resource('pedido', 'PedidoController');
 
     // php artisan make:controller --resource PedidoProdutoController
-    route::resource('pedido-produto', 'PedidoProdutoController');
+    //route::resource('pedido-produto', 'PedidoProdutoController');
+
+    Route::get('pedido-produto/create/{pedido}', 'PedidoProdutoController@create')->name('pedido-produto.create');
+    Route::post('pedido-produto/store/{pedido}', 'PedidoProdutoController@store')->name('pedido-produto.store');
 });
 
 //

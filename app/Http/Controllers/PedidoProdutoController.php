@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pedido;
+use App\Produto;
 
 class PedidoProdutoController extends Controller
 {
@@ -21,9 +23,10 @@ class PedidoProdutoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Pedido $pedido)
     {
-        //
+
+        return view('app.pedido_produto.create', ['pedido' => $pedido]);
     }
 
     /**
