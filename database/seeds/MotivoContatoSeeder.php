@@ -7,7 +7,8 @@ class MotivoContatoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     * php artisan db:seed --classMotivoContatoSeeder ( Aula 129)
+     * php artisan db:seed --class=MotivoContatoSeeder ( Aula 129)
+     *
      * @return void
      */
     public function run()
