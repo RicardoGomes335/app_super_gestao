@@ -10,6 +10,6 @@ class Pedido extends Model
     {
         // relacionamento (belongsToMany) = (Pertence muitos produtos á um pedido)
         //return $this->belongsToMany('App\Produto', 'pedidos_produtos');
-        return $this->belongsToMany('App\Item', 'pedidos_produtos', 'pedido_id', 'produto_id');
+        return $this->belongsToMany('App\Item', 'pedidos_produtos', 'pedido_id', 'produto_id')->withPivot('created_at');
     }
 }

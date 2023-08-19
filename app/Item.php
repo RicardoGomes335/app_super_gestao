@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Item extends Model
 {
@@ -17,5 +18,10 @@ class Item extends Model
     public function fornecedor()
     {
         return $this->belongsTo('App\Fornecedor');
+    }
+
+    public function pedidos()
+    {
+        return $this->belongsToMany('App\Pedido', 'pedidos_produtos', 'produto_id', 'pedido_id');
     }
 }
